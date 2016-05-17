@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.csci342.justin.csci342_assignment2.MainActivity"
+    android:background="#a1ff73">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/search_title"
+            android:id="@+id/MA_searchtitle_textview"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/MA_searchvalue_edittext"
+            android:background="#FFFFFF"
+            android:text="@string/default_search"
+            android:textColor="#9d9d9d"
+            android:paddingLeft="5dp"
+            android:layout_marginLeft="5dp"
+            android:maxLength="8"
+            android:layout_weight="2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search"
+            android:id="@+id/MA_search_button"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:onClick="SearchButtonPressed"
+            android:background="@drawable/button_states" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/display_all"
+        android:id="@+id/MA_displayall_button"
+        android:background="@drawable/button_states"
+        android:layout_margin="5dp"
+        android:onClick="DisplayAllSubjectsButtonPressed" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/frameborder"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/selection_title"
+            android:id="@+id/MA_selectiontitle_textview"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/html"
+                android:id="@+id/MA_html_button"
+                android:layout_weight="1"
+                android:onClick="HTMLButtonPressed"
+                android:layout_margin="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/xml"
+                android:id="@+id/MA_xml_button"
+                android:layout_weight="1"
+                android:onClick="XMLButtonPressed"
+                android:layout_margin="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/json"
+                android:id="@+id/MA_json_button"
+                android:layout_weight="1"
+                android:onClick="JSONButtonPressed"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/MA_fragmentholder_framelayout"
+        android:background="@drawable/frameborder"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MA_singlesubjectlayout_linearlayout"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/subject_name"
+                android:id="@+id/MA_subjecttitle_textview"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/MA_subjectdisplay_textview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/subject_desc"
+                android:id="@+id/MA_subjectdescription_textview"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/MA_descriptiondisplay_textview"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp" />
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MA_listofsubjects_listview"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</LinearLayout>

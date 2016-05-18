@@ -2,12 +2,14 @@
     <string name="app_name">Assignment2JustinJawadAhmed</string>
     <string name="search_title">Search: </string>
     <string name="default_search">CSCI342</string>
-    <string name="selection_title">Select your Format</string>
+    <string name="selection_title">Select Format</string>
     <string name="html">HTML</string>
     <string name="xml">XML</string>
     <string name="json">JSON</string>
     <string name="search">Search</string>
     <string name="subject_name">Subject Name:</string>
     <string name="subject_desc">Subject Description:</string>
-    <string name="display_all">Display All Subjects</string>
+    <string name="display_all">Display Formatted Data</string>
+    <string name="unformated_service_requested">Unformated Data From WebService</string>
+    <string name="unformated_local_requested">Unformated Data From Local DB</string>
 </resources>

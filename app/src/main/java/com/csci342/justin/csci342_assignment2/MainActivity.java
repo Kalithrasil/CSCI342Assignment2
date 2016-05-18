@@ -5,7 +5,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,11 +19,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
         setButtonPressed("HTML");
         initialiseDatabase();
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
 
     }
@@ -352,9 +371,14 @@ public class MainActivity extends AppCompatActivity {
     {
         ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
         my_list.setVisibility(View.INVISIBLE);
+        LinearLayout unformatted = (LinearLayout) findViewById(R.id.MA_unformatedWebServiceRequest_linearLayout);
+        unformatted.setVisibility(View.INVISIBLE);
+        ScrollView unformattedSV = (ScrollView) findViewById(R.id.MA_UnformattedData_scrollview);
+        unformattedSV.setVisibility(View.INVISIBLE);
 
         EditText temp = (EditText) findViewById(R.id.MA_searchvalue_edittext);
         String subject_searched = temp.getText().toString();
+        temp.setText("");
 
         LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
         single.setVisibility(View.VISIBLE);
@@ -371,12 +395,20 @@ public class MainActivity extends AppCompatActivity {
         {
             searchAndDisplayHTML(subject_searched);
         }
+
+
     }
 
     public void DisplayAllSubjectsButtonPressed(View v)
     {
         LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
         single.setVisibility(View.INVISIBLE);
+        LinearLayout unformatted = (LinearLayout) findViewById(R.id.MA_unformatedWebServiceRequest_linearLayout);
+        unformatted.setVisibility(View.INVISIBLE);
+        ScrollView unformattedSV = (ScrollView) findViewById(R.id.MA_UnformattedData_scrollview);
+        unformattedSV.setVisibility(View.INVISIBLE);
+
+        Toast.makeText(this,selected_format,Toast.LENGTH_LONG).show();
 
         all_subjects = new ArrayList<HashMap<String,String>>();
         if(selected_format.equals("XML")) {
@@ -429,18 +461,79 @@ public class MainActivity extends AppCompatActivity {
     {
         //Toast.makeText(this, "HTML Pressed", Toast.LENGTH_LONG).show();
         setButtonPressed("HTML");
+
+        LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
+        single.setVisibility(View.INVISIBLE);
+        ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
+        my_list.setVisibility(View.INVISIBLE);
+
+        LinearLayout unformatted = (LinearLayout) findViewById(R.id.MA_unformatedWebServiceRequest_linearLayout);
+        unformatted.setVisibility(View.VISIBLE);
+        ScrollView unformattedSV = (ScrollView) findViewById(R.id.MA_UnformattedData_scrollview);
+        unformattedSV.setVisibility(View.VISIBLE);
+
+        String RequestedData = getStuffFromWebService("HTML");
+
+        TextView RDTV = (TextView) findViewById(R.id.MA_UnformattedServiceData_textview);
+        RDTV.setText(RequestedData);
+
+        TextView LDTV = (TextView) findViewById(R.id.MA_UnformattedLocalData_textview);
+        all_subjects.clear();
+        appendLocalDatabaseToArrayList();
+        LDTV.setText(all_subjects.toString());
     }
 
     public void XMLButtonPressed(View v)
     {
         //Toast.makeText(this,"XML Pressed",Toast.LENGTH_LONG).show();
         setButtonPressed("XML");
+
+        LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
+        single.setVisibility(View.INVISIBLE);
+        ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
+        my_list.setVisibility(View.INVISIBLE);
+
+        LinearLayout unformatted = (LinearLayout) findViewById(R.id.MA_unformatedWebServiceRequest_linearLayout);
+        unformatted.setVisibility(View.VISIBLE);
+        ScrollView unformattedSV = (ScrollView) findViewById(R.id.MA_UnformattedData_scrollview);
+        unformattedSV.setVisibility(View.VISIBLE);
+
+        String RequestedData = getStuffFromWebService("XML");
+
+        TextView RDTV = (TextView) findViewById(R.id.MA_UnformattedServiceData_textview);
+        RDTV.setText(RequestedData);
+
+        TextView LDTV = (TextView) findViewById(R.id.MA_UnformattedLocalData_textview);
+        all_subjects.clear();
+        appendLocalDatabaseToArrayList();
+        LDTV.setText(all_subjects.toString());
     }
 
     public void JSONButtonPressed(View v)
     {
         //Toast.makeText(this,"JSON Pressed",Toast.LENGTH_LONG).show();
         setButtonPressed("JSON");
+
+        LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
+        single.setVisibility(View.INVISIBLE);
+        ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
+        my_list.setVisibility(View.INVISIBLE);
+
+        LinearLayout unformatted = (LinearLayout) findViewById(R.id.MA_unformatedWebServiceRequest_linearLayout);
+        unformatted.setVisibility(View.VISIBLE);
+        ScrollView unformattedSV = (ScrollView) findViewById(R.id.MA_UnformattedData_scrollview);
+        unformattedSV.setVisibility(View.VISIBLE);
+
+        String RequestedData = getStuffFromWebService("JSON");
+
+        TextView RDTV = (TextView) findViewById(R.id.MA_UnformattedServiceData_textview);
+        RDTV.setText(RequestedData);
+
+        TextView LDTV = (TextView) findViewById(R.id.MA_UnformattedLocalData_textview);
+        all_subjects.clear();
+        appendLocalDatabaseToArrayList();
+        LDTV.setText(all_subjects.toString());
+
     }
 
     private class SubjectListAdapter extends BaseAdapter implements View.OnClickListener {
@@ -498,6 +591,83 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+        }
+    }
+
+    public String getStuffFromWebService(String format)
+    {
+        trustManagerThingy();
+
+        InputStream is = null;
+        int len = 666;
+        String theReturnedString = "";
+
+        try
+        {
+            String theURL = "https://www.google.com/";//https:my.uowdubai.ac.ae/restful/subject/list/";
+
+            URL url = new URL(theURL);
+            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("GET");
+
+            //if (format == "HTML")  conn.setRequestProperty("Content-Type", "application/html");
+            //if (format == "XML" )  conn.setRequestProperty("Content-Type", "application/xml");
+            //if (format == "JSON")  conn.setRequestProperty("Content-Type", "application/json");
+
+            conn.connect();
+            //Toast.makeText(this,"Receving: Connected " + conn.toString(),Toast.LENGTH_SHORT).show();
+
+            int resposne = conn.getResponseCode();
+            //Toast.makeText(this,"Receving: Response: " + resposne,Toast.LENGTH_SHORT).show();
+
+            is = conn.getInputStream();
+            //Toast.makeText(this,"Receving: getInputStream: " + is.toString(),Toast.LENGTH_SHORT).show();
+
+            Reader reader = new InputStreamReader(is, "UTF-8");
+            char[] buffer = new char[len];
+            reader.read(buffer);
+            theReturnedString = new String(buffer);
+
+            //Toast.makeText(this,"Receving: Read: " + theReturnedString.length() + " chars",Toast.LENGTH_SHORT).show();
+
+            if ( is != null ) is.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return theReturnedString;
+    }
+
+    private void trustManagerThingy()
+    {
+        TrustManager[] trustAllCerts = new TrustManager[]{
+                new X509TrustManager() {
+                    public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                        return null;
+                    }
+                    public void checkClientTrusted(
+                            java.security.cert.X509Certificate[] certs, String authType) {
+                    }
+                    public void checkServerTrusted(
+                            java.security.cert.X509Certificate[] certs, String authType) {
+                    }
+                }
+        };
+
+// Install the all-trusting trust manager
+        try
+        {
+            SSLContext sc = SSLContext.getInstance("SSL");
+            sc.init(null, trustAllCerts, new java.security.SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }

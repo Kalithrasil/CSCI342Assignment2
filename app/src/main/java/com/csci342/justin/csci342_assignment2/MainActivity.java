@@ -40,13 +40,15 @@ import javax.net.ssl.X509TrustManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    int button_pressed = 0xff969696;
-    int button_unpressed = 0xffC8C8C8;
-    String selected_format = "HTML";
+    int     button_pressed      = 0xff969696;
+    int     button_unpressed    = 0xffC8C8C8;
+    String  selected_format     = "HTML";
+    String  currentURL          = "https:my.uowdubai.ac.ae/restful/subject/list/";
+    int     useAlternateURL     = 0; //0 = assignment, 1 = preset, 2 = custom
 
     ArrayList<HashMap<String,String>> all_subjects = new ArrayList<HashMap<String,String>>();
-
     SQLiteDatabase local_subjects;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         wipeDatabase();
 
         setButtonPressed("HTML");
+        setURLButtonPressed("assignment");
         initialiseDatabase();
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -228,6 +231,65 @@ public class MainActivity extends AppCompatActivity {
                 temp = (Button) findViewById(R.id.MA_json_button);
                 temp.setBackgroundColor(button_unpressed);
                 selected_format = "HTML";
+            }
+        }
+        else
+        {
+            temp = (Button) findViewById(R.id.MA_html_button);
+            temp.setBackgroundColor(button_pressed);
+            temp = (Button) findViewById(R.id.MA_xml_button);
+            temp.setBackgroundColor(button_unpressed);
+            temp = (Button) findViewById(R.id.MA_json_button);
+            temp.setBackgroundColor(button_unpressed);
+            selected_format = "HTML";
+        }
+    }
+
+    public void setURLButtonPressed(String x)
+    {
+        Button temp;
+        EditText urlTextBox = (EditText) findViewById(R.id.MA_currentURL_edittext);
+        if(!(x == null)) {
+            if (x.equals("assignment"))
+            {
+                temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
+                temp.setBackgroundColor(button_pressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
+                temp.setBackgroundColor(button_unpressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
+                temp.setBackgroundColor(button_unpressed);
+                urlTextBox.setText("https://my.uowdubai.ac.ae/restful/subject/list/");
+                urlTextBox.setEnabled(false);
+                useAlternateURL = 0;
+
+            }
+            else if (x.equals("preset"))
+            {
+                temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
+                temp.setBackgroundColor(button_unpressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
+                temp.setBackgroundColor(button_pressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
+                temp.setBackgroundColor(button_unpressed);
+                if ( selected_format == "HTML" ) urlTextBox.setText("http://www.google.com/");
+                if ( selected_format == "XML"  ) urlTextBox.setText("http://api.androidhive.info/pizza/?format=xml");
+                if ( selected_format == "JSON" ) urlTextBox.setText("http://demo.codeofaninja.com/tutorials/json-example-with-php/index.php");
+
+                urlTextBox.setEnabled(false);
+                useAlternateURL = 1;
+            }
+            else
+            {
+                temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
+                temp.setBackgroundColor(button_unpressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
+                temp.setBackgroundColor(button_unpressed);
+                temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
+                temp.setBackgroundColor(button_pressed);
+                urlTextBox.setText("");
+                urlTextBox.setHint("Type URL Here");
+                urlTextBox.setEnabled(true);
+                useAlternateURL = 2;
             }
         }
         else
@@ -461,6 +523,7 @@ public class MainActivity extends AppCompatActivity {
     {
         //Toast.makeText(this, "HTML Pressed", Toast.LENGTH_LONG).show();
         setButtonPressed("HTML");
+        if ( useAlternateURL == 1 ) setURLButtonPressed("preset");
 
         LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
         single.setVisibility(View.INVISIBLE);
@@ -487,6 +550,7 @@ public class MainActivity extends AppCompatActivity {
     {
         //Toast.makeText(this,"XML Pressed",Toast.LENGTH_LONG).show();
         setButtonPressed("XML");
+        if ( useAlternateURL == 1 ) setURLButtonPressed("preset");
 
         LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
         single.setVisibility(View.INVISIBLE);
@@ -513,6 +577,7 @@ public class MainActivity extends AppCompatActivity {
     {
         //Toast.makeText(this,"JSON Pressed",Toast.LENGTH_LONG).show();
         setButtonPressed("JSON");
+        if ( useAlternateURL == 1 ) setURLButtonPressed("preset");
 
         LinearLayout single = (LinearLayout) findViewById(R.id.MA_singlesubjectlayout_linearlayout);
         single.setVisibility(View.INVISIBLE);
@@ -534,6 +599,21 @@ public class MainActivity extends AppCompatActivity {
         appendLocalDatabaseToArrayList();
         LDTV.setText(all_subjects.toString());
 
+    }
+
+    public void URL_AssignmentButtonPressed(View V)
+    {
+        setURLButtonPressed("assignment");
+    }
+
+    public void URL_PresetButtonPressed(View V)
+    {
+        setURLButtonPressed("preset");
+    }
+
+    public void URL_CustomButtonPressed(View V)
+    {
+        setURLButtonPressed("custom");
     }
 
     private class SubjectListAdapter extends BaseAdapter implements View.OnClickListener {
@@ -599,22 +679,26 @@ public class MainActivity extends AppCompatActivity {
         trustManagerThingy();
 
         InputStream is = null;
-        int len = 666;
+        int len = 1000;
         String theReturnedString = "";
 
         try
         {
-            String theURL = "https://www.google.com/";//https:my.uowdubai.ac.ae/restful/subject/list/";
+            EditText urlText = (EditText) findViewById(R.id.MA_currentURL_edittext);
+            String theURL = urlText.getText().toString();//https:my.uowdubai.ac.ae/restful/subject/list/";
+            //Toast.makeText(this,"URL: " + theURL,Toast.LENGTH_SHORT).show();
+
 
             URL url = new URL(theURL);
-            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            if ( theURL.substring(0,4).equals("https")) conn = (HttpsURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
             conn.setRequestMethod("GET");
 
-            //if (format == "HTML")  conn.setRequestProperty("Content-Type", "application/html");
-            //if (format == "XML" )  conn.setRequestProperty("Content-Type", "application/xml");
-            //if (format == "JSON")  conn.setRequestProperty("Content-Type", "application/json");
+            if (format == "HTML")  conn.setRequestProperty("Content-Type", "application/html");
+            if (format == "XML" )  conn.setRequestProperty("Content-Type", "application/xml");
+            if (format == "JSON")  conn.setRequestProperty("Content-Type", "application/json");
 
             conn.connect();
             //Toast.makeText(this,"Receving: Connected " + conn.toString(),Toast.LENGTH_SHORT).show();
@@ -637,6 +721,8 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e)
         {
             e.printStackTrace();
+            Toast.makeText(this,"INVALID URL",Toast.LENGTH_LONG).show();
+
         }
 
         return theReturnedString;

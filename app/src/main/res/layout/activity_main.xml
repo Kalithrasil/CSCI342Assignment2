@@ -24,7 +24,8 @@
             android:maxLength="8"
             android:layout_weight="2"
             android:hint="CSCI336"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="2dp"
+            android:text="CSCI336" />
 
         <Button
             android:layout_width="wrap_content"

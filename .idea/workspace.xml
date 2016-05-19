@@ -36,20 +36,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45754716">
-              <caret line="718" column="7" selection-start-line="718" selection-start-column="7" selection-end-line="718" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="698" column="38" selection-start-line="698" selection-start-column="38" selection-end-line="698" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1607#1631#0" expanded="true" />
+                <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#searchAndDisplayJSON#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#SearchButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#DisplayAllSubjectsButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -70,7 +89,7 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="Assignment2CSCI342" />
+              <option name="name" value="CSCI342 - Assignment 2" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
@@ -81,7 +100,7 @@
                 <option name="path" value="$PROJECT_DIR$/app" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="Assignment2CSCI342" />
+                <option name="name" value="CSCI342 - Assignment 2" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -99,17 +118,17 @@
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'Assignment2CSCI342'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'CSCI342 - Assignment 2'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'Assignment2CSCI342'." />
+                <option name="description" value="Displays all dependencies declared in root project 'CSCI342 - Assignment 2'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'Assignment2CSCI342'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'CSCI342 - Assignment 2'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -124,22 +143,22 @@
                 <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'Assignment2CSCI342'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'CSCI342 - Assignment 2'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'Assignment2CSCI342'." />
+                <option name="description" value="Displays the sub-projects of root project 'CSCI342 - Assignment 2'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'Assignment2CSCI342'." />
+                <option name="description" value="Displays the properties of root project 'CSCI342 - Assignment 2'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'Assignment2CSCI342' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'CSCI342 - Assignment 2' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -1259,7 +1278,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\Jawad\AndroidStudioProjects\CSCI342 - Assignment 2" value="4390741144510" />
-        <entry key="C:\Users\Justin\AndroidStudioProjects\Assignment2CSCI342" value="4390983019696" />
+        <entry key="C:\Users\Justin\AndroidStudioProjects\Assignment2CSCI342" value="4390494356147" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1475,11 +1494,11 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
-                            <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.2.0/appcompat-v7-23.2.0.aar" />
-                            <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.2.0/support-v4-23.2.0.aar" />
-                            <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/animated-vector-drawable/23.2.0/animated-vector-drawable-23.2.0.aar" />
-                            <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.2.0/support-vector-drawable-23.2.0.aar" />
-                            <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar" />
+                            <option value="$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/appcompat-v7/23.2.0/appcompat-v7-23.2.0.aar" />
+                            <option value="$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/support-v4/23.2.0/support-v4-23.2.0.aar" />
+                            <option value="$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/animated-vector-drawable/23.2.0/animated-vector-drawable-23.2.0.aar" />
+                            <option value="$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/support-vector-drawable/23.2.0/support-vector-drawable-23.2.0.aar" />
+                            <option value="$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/app" />
@@ -1620,8 +1639,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       </list>
     </option>
   </component>
@@ -1632,7 +1651,7 @@
     <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1942" />
-    <option name="height" value="1046" />
+    <option name="height" value="1042" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1657,7 +1676,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1668,16 +1686,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="41005fac44b7912d" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="503008990412" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
     <property name="FullScreen" value="false" />
   </component>
@@ -1829,15 +1848,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
-    <editor active="false" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.49751243" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17926829" sideWeight="0.49751243" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18014705" sideWeight="0.49751243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1888,28 +1907,25 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayJSON#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#SearchButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#DisplayAllSubjectsButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
@@ -1932,20 +1948,28 @@
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayJSON#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#SearchButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#DisplayAllSubjectsButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
@@ -1961,13 +1985,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45754716">
-          <caret line="718" column="7" selection-start-line="718" selection-start-column="7" selection-end-line="718" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="698" column="38" selection-start-line="698" selection-start-column="38" selection-end-line="698" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#searchAndDisplayJSON#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#SearchButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#DisplayAllSubjectsButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

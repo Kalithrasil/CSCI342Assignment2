@@ -696,9 +696,9 @@ public class MainActivity extends AppCompatActivity {
             conn.setConnectTimeout(15000);
             conn.setRequestMethod("GET");
 
-            if (format == "HTML")  conn.setRequestProperty("Content-Type", "application/html");
-            if (format == "XML" )  conn.setRequestProperty("Content-Type", "application/xml");
-            if (format == "JSON")  conn.setRequestProperty("Content-Type", "application/json");
+            if (format.equals("HTML"))  conn.setRequestProperty("Content-Type", "application/html");
+            if (format.equals("XML") )  conn.setRequestProperty("Content-Type", "application/xml");
+            if (format.equals("JSON"))  conn.setRequestProperty("Content-Type", "application/json");
 
             conn.connect();
             //Toast.makeText(this,"Receving: Connected " + conn.toString(),Toast.LENGTH_SHORT).show();

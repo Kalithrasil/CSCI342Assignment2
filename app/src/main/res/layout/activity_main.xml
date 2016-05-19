@@ -13,14 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/search_title"
-            android:id="@+id/MA_searchtitle_textview"
-            android:layout_weight="1" />
-
         <EditText
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -31,11 +23,12 @@
             android:layout_marginLeft="5dp"
             android:maxLength="8"
             android:layout_weight="2"
-            android:hint="CSCI336" />
+            android:hint="CSCI336"
+            android:layout_marginTop="2dp" />
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:text="@string/search"
             android:id="@+id/MA_search_button"
             android:layout_weight="1"
@@ -52,6 +45,51 @@
         android:background="@drawable/button_states"
         android:layout_margin="5dp"
         android:onClick="DisplayAllSubjectsButtonPressed" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MA_currentURL_edittext"
+        android:text="https://my.uowdubai.ac.ae/restful/subject/list/"
+        android:textSize="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MA_URLType_linearlayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Assignment URL"
+            android:id="@+id/MA_URLType_Assignment_button"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:onClick="URL_AssignmentButtonPressed" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PRESET URL"
+            android:id="@+id/MA_URLType_Preset_button"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:nestedScrollingEnabled="false"
+            android:onClick="URL_PresetButtonPressed" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="CUSTOM URL"
+            android:id="@+id/MA_URLType_Custom_Button"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:onClick="URL_CustomButtonPressed" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"

@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
             //if(local_valid), display result
-        getStuffFromWebService("HTML");
+        FillArrayListWithDataFromWebService("HTML");
         for ( int i = 0; i < all_subjects.size(); i++ )
         {
             if ( all_subjects.get(i).containsValue(subject_code))
@@ -395,7 +395,7 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
         //if(local_valid), display result
-        getStuffFromWebService("XML");
+        FillArrayListWithDataFromWebService("XML");
         for ( int i = 0; i < all_subjects.size(); i++ )
         {
             if ( all_subjects.get(i).containsValue(subject_code))
@@ -441,7 +441,7 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
         //if(local_valid), display result
-        getStuffFromWebService("JSON");
+        FillArrayListWithDataFromWebService("JSON");
         for ( int i = 0; i < all_subjects.size(); i++ )
         {
             if ( all_subjects.get(i).containsValue(subject_code))

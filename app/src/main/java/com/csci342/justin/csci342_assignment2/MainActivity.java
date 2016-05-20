@@ -23,10 +23,19 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -37,13 +46,15 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class MainActivity extends AppCompatActivity {
 
     int     button_pressed      = 0xff969696;
     int     button_unpressed    = 0xffC8C8C8;
     String  selected_format     = "HTML";
-    String  currentURL          = "https:my.uowdubai.ac.ae/restful/subject/list/";
+    String  lastCustomURL       = "https:my.uowdubai.ac.ae/restful/subject/list/";
     int     useAlternateURL     = 0; //0 = assignment, 1 = preset, 2 = custom
 
     ArrayList<HashMap<String,String>> all_subjects = new ArrayList<HashMap<String,String>>();
@@ -254,10 +265,9 @@ public class MainActivity extends AppCompatActivity {
             {
                 temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
                 temp.setBackgroundColor(button_pressed);
-                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
-                temp.setBackgroundColor(button_unpressed);
                 temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
                 temp.setBackgroundColor(button_unpressed);
+                lastCustomURL = urlTextBox.getText().toString();
                 urlTextBox.setText("https://my.uowdubai.ac.ae/restful/subject/list/");
                 urlTextBox.setEnabled(false);
                 useAlternateURL = 0;
@@ -267,8 +277,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
                 temp.setBackgroundColor(button_unpressed);
-                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
-                temp.setBackgroundColor(button_pressed);
                 temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
                 temp.setBackgroundColor(button_unpressed);
                 if ( selected_format == "HTML" ) urlTextBox.setText("http://www.google.com/");
@@ -282,11 +290,9 @@ public class MainActivity extends AppCompatActivity {
             {
                 temp = (Button) findViewById(R.id.MA_URLType_Assignment_button);
                 temp.setBackgroundColor(button_unpressed);
-                temp = (Button) findViewById(R.id.MA_URLType_Preset_button);
-                temp.setBackgroundColor(button_unpressed);
                 temp = (Button) findViewById(R.id.MA_URLType_Custom_Button);
                 temp.setBackgroundColor(button_pressed);
-                urlTextBox.setText("");
+                urlTextBox.setText(lastCustomURL);
                 urlTextBox.setHint("Type URL Here");
                 urlTextBox.setEnabled(true);
                 useAlternateURL = 2;
@@ -334,6 +340,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     public void searchAndDisplayHTML(String subject_code)
     {
         //perform search with the URL correctly
@@ -341,6 +349,20 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
             //if(local_valid), display result
+        getStuffFromWebService("HTML");
+        for ( int i = 0; i < all_subjects.size(); i++ )
+        {
+            if ( all_subjects.get(i).containsValue(subject_code))
+            {
+                {
+                    TextView display = (TextView) findViewById(R.id.MA_subjectdisplay_textview);
+                    display.setText(subject_code);
+                    display = (TextView) findViewById(R.id.MA_descriptiondisplay_textview);
+                    display.setText(all_subjects.get(i).get("Description"));
+                }
+                return;
+            }
+        }
         boolean local_valid = doesSubjectExistLocally(subject_code);
         if(local_valid)
         {
@@ -373,6 +395,20 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
         //if(local_valid), display result
+        getStuffFromWebService("XML");
+        for ( int i = 0; i < all_subjects.size(); i++ )
+        {
+            if ( all_subjects.get(i).containsValue(subject_code))
+            {
+                {
+                    TextView display = (TextView) findViewById(R.id.MA_subjectdisplay_textview);
+                    display.setText(subject_code);
+                    display = (TextView) findViewById(R.id.MA_descriptiondisplay_textview);
+                    display.setText(all_subjects.get(i).get("Description"));
+                }
+                return;
+            }
+        }
         boolean local_valid = doesSubjectExistLocally(subject_code);
         if(local_valid)
         {
@@ -405,6 +441,20 @@ public class MainActivity extends AppCompatActivity {
         //if(valid), display result
         //else, query local database
         //if(local_valid), display result
+        getStuffFromWebService("JSON");
+        for ( int i = 0; i < all_subjects.size(); i++ )
+        {
+            if ( all_subjects.get(i).containsValue(subject_code))
+            {
+                {
+                    TextView display = (TextView) findViewById(R.id.MA_subjectdisplay_textview);
+                    display.setText(subject_code);
+                    display = (TextView) findViewById(R.id.MA_descriptiondisplay_textview);
+                    display.setText(all_subjects.get(i).get("Description"));
+                }
+                return;
+            }
+        }
         boolean local_valid = doesSubjectExistLocally(subject_code);
         if(local_valid)
         {
@@ -477,6 +527,9 @@ public class MainActivity extends AppCompatActivity {
             //query the online database
             //create HashMap<String,String> type, populate it, and add to all_subjects
                 //see appendLocalDatabaseToArrayList for code to do this
+
+            FillArrayListWithDataFromWebService("XML");
+
             appendLocalDatabaseToArrayList();
 
             ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
@@ -492,6 +545,9 @@ public class MainActivity extends AppCompatActivity {
             //query the online database
             //create HashMap<String,String> type, populate it, and add to all_subjects
             //see appendLocalDatabaseToArrayList for code to do this
+
+            FillArrayListWithDataFromWebService("JSON");
+
             appendLocalDatabaseToArrayList();
 
             ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
@@ -504,9 +560,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else //html
         {
-            //query the online database
-            //create HashMap<String,String> type, populate it, and add to all_subjects
-            //see appendLocalDatabaseToArrayList for code to do this
+            FillArrayListWithDataFromWebService("HTML");
+
             appendLocalDatabaseToArrayList();
 
             ListView my_list = (ListView) findViewById(R.id.MA_listofsubjects_listview);
@@ -679,7 +734,7 @@ public class MainActivity extends AppCompatActivity {
         trustManagerThingy();
 
         InputStream is = null;
-        int len = 1000;
+        int len = 10000;
         String theReturnedString = "";
 
         try
@@ -688,17 +743,17 @@ public class MainActivity extends AppCompatActivity {
             String theURL = urlText.getText().toString();//https:my.uowdubai.ac.ae/restful/subject/list/";
             //Toast.makeText(this,"URL: " + theURL,Toast.LENGTH_SHORT).show();
 
-
             URL url = new URL(theURL);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
             if ( theURL.substring(0,4).equals("https")) conn = (HttpsURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
             conn.setRequestMethod("GET");
 
-            if (format.equals("HTML"))  conn.setRequestProperty("Content-Type", "application/html");
-            if (format.equals("XML") )  conn.setRequestProperty("Content-Type", "application/xml");
-            if (format.equals("JSON"))  conn.setRequestProperty("Content-Type", "application/json");
+
+            if (format.equals("HTML"))  conn.setRequestProperty("accept", "text/html");
+            if (format.equals("XML") )  conn.setRequestProperty("accept", "application/xml");
+            if (format.equals("JSON"))  conn.setRequestProperty("accept", "application/json");
 
             conn.connect();
             //Toast.makeText(this,"Receving: Connected " + conn.toString(),Toast.LENGTH_SHORT).show();
@@ -708,6 +763,7 @@ public class MainActivity extends AppCompatActivity {
 
             is = conn.getInputStream();
             //Toast.makeText(this,"Receving: getInputStream: " + is.toString(),Toast.LENGTH_SHORT).show();
+
 
             Reader reader = new InputStreamReader(is, "UTF-8");
             char[] buffer = new char[len];
@@ -726,6 +782,183 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return theReturnedString;
+    }
+
+    private void FillArrayListWithDataFromWebService(String TheFormat)
+    {
+        all_subjects.clear();
+
+        String subjectName = "";
+        String subjectDesc = "";
+
+        if ( TheFormat == "HTML" )
+        {
+            String theHTML = getStuffFromWebService("HTML");
+            for (int i = 0; i < theHTML.length()-4; i++)
+            {
+                //Log.i( "TheSubString", theHTML.substring(i,i+3) );
+                if ( theHTML.substring(i,i+4).equals("<td>"))
+                {
+                    //Toast.makeText(this,"Got Inside <td> = " + theHTML.substring(i,i+3) ,Toast.LENGTH_SHORT).show();
+
+                    if ( subjectName.equals(""))
+                    {
+                        int k = 4;
+                        while ( !theHTML.substring(i+k, i+k+1).equals("<") )
+                        {
+                            subjectName += theHTML.substring(i+k, i+k+1);
+                            k++;
+                        }
+                    }
+                    else
+                    {
+                        int k = 4;
+                        while ( !theHTML.substring(i+k, i+k+1).equals("<") )
+                        {
+                            subjectDesc += theHTML.substring(i+k, i+k+1);
+                            k++;
+                        }
+
+                        HashMap<String,String> subject = new HashMap<String,String>();
+                        subject.put("Code",subjectName);
+                        subject.put("Description",subjectDesc);
+                        subject.put("IsLocal?", "No");
+                        all_subjects.add(subject);
+
+                        subjectName = "";
+                        subjectDesc = "";
+
+                    }
+                }
+            }
+        }
+        else if ( TheFormat == "XML" )
+        {
+            String theXML = getStuffFromWebService("XML");
+
+            Document doc = null;
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+            try
+            {
+                DocumentBuilder db = dbf.newDocumentBuilder();
+
+                InputSource is = new InputSource();
+                is.setCharacterStream(new StringReader(theXML));
+                doc = db.parse(is);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            NodeList nl = doc.getElementsByTagName("mobile");
+
+            for ( int i = 0; i < nl.getLength(); i++)
+            {
+                Node n = nl.item(i);
+                Element el = (Element) n;
+
+                NodeList newNL = el.getChildNodes();
+
+                for ( int k = 0; k < newNL.getLength(); k++)
+                {
+                    Node N = newNL.item(k);
+
+                    subjectName = N.getNodeName();
+                    subjectDesc = N.getTextContent();
+
+                    HashMap<String,String> subject = new HashMap<String,String>();
+                    subject.put("Code",subjectName);
+                    subject.put("Description",subjectDesc);
+                    subject.put("IsLocal?","No");
+                    all_subjects.add(subject);
+                }
+
+            }
+        }
+        else if ( TheFormat == "JSON" )
+        {
+            String theJSON = getStuffFromWebService("JSON");
+
+            JSONObject data = null;
+
+            String formattedString;
+
+            try
+            {
+
+                //THIS FOR LOOP WILL FIND ALL THE SUBJECT CODES
+                //BUT IT WAS IMPOSSIBLE TO GET THE SUBJECT DESCRIPTIONS
+                //SO DECIDED TO BREAK DOWN THE JSON DIRECTLY UNFORTUANTELY
+                /*
+
+                data = new JSONObject(theJSON);
+
+                JSONArray JA = data.names();
+                for ( int i = 0; i < JA.length(); i++ )
+                {
+                    subjectName = JA.getString(i); // Log.i("JSON", JA.getString(i));
+
+                }
+
+                */
+                subjectName = "";
+                subjectDesc = "";
+                boolean open = false;
+
+                for ( int j = 0 ; j < theJSON.length()-2; j++ )
+                {
+                    if ( theJSON.substring(j, j+1).equals("\"")  )
+                    {
+                        if ( !open )
+                        {
+                            open = true;
+
+                            if (subjectName.equals("")) {
+                                int k = 1;
+                                while (!theJSON.substring(j + k, j + k + 1).equals("\"")
+                                        && !theJSON.substring(j + k, j + k + 1).equals("}")) {
+                                    subjectName += theJSON.substring(j + k, j + k + 1);
+                                    k++;
+                                }
+                                Log.i("Name", subjectName);
+                            } else {
+                                int k = 1;
+                                while (!theJSON.substring(j + k, j + k + 1).equals("\"")) {
+                                    subjectDesc += theJSON.substring(j + k, j + k + 1);
+                                    k++;
+                                }
+                                Log.i("Desc", subjectDesc);
+
+                                HashMap<String, String> subject = new HashMap<String, String>();
+                                subject.put("Code", subjectName);
+                                subject.put("Description", subjectDesc);
+                                subject.put("IsLocal?", "No");
+                                all_subjects.add(subject);
+
+                                subjectName = "";
+                                subjectDesc = "";
+
+                                if (theJSON.substring(j + k, j + k + 1).equals("}")) break;
+
+                            }
+                        }
+                        else
+                        {
+                            open = false;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     private void trustManagerThingy()

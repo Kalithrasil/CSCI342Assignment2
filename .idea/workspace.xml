@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -36,22 +37,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="698" column="38" selection-start-line="698" selection-start-column="38" selection-end-line="698" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.45929018">
+              <caret line="290" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="992" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1607#1631#0" expanded="true" />
+                <element signature="e#1926#1950#0" expanded="true" />
+                <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#6883#6898#0" expanded="true" />
                 <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
@@ -61,22 +63,33 @@
                 <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#25245#25246#0" expanded="true" />
+                <element signature="e#25294#25295#0" expanded="true" />
+                <element signature="e#25349#25350#0" expanded="true" />
+                <element signature="e#25394#25395#0" expanded="true" />
+                <element signature="e#25449#25450#0" expanded="true" />
+                <element signature="e#25494#25495#0" expanded="true" />
                 <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#getStuffFromWebService#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#FillArrayListWithDataFromWebService#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#30752#30767#0" expanded="true" />
+                <element signature="e#32288#32303#0" expanded="true" />
+                <element signature="e#34665#34681#0" expanded="true" />
                 <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.605263">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
@@ -1644,6 +1657,13 @@
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
@@ -1853,10 +1873,11 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955772" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.49751243" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18014705" sideWeight="0.49751243" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36764705" sideWeight="0.49751243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1865,18 +1886,17 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22545847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4548872" sideWeight="0.49751243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45465687" sideWeight="0.49751243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1896,7 +1916,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1907,15 +1927,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="e#1926#1950#0" expanded="true" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
             <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
             <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6883#6898#0" expanded="true" />
             <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
@@ -1925,7 +1946,18 @@
             <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#25245#25246#0" expanded="true" />
+            <element signature="e#25294#25295#0" expanded="true" />
+            <element signature="e#25349#25350#0" expanded="true" />
+            <element signature="e#25394#25395#0" expanded="true" />
+            <element signature="e#25449#25450#0" expanded="true" />
+            <element signature="e#25494#25495#0" expanded="true" />
             <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getStuffFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#FillArrayListWithDataFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#30752#30767#0" expanded="true" />
+            <element signature="e#32288#32303#0" expanded="true" />
+            <element signature="e#34665#34681#0" expanded="true" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
@@ -1948,15 +1980,16 @@
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="e#1926#1950#0" expanded="true" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
             <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
             <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6883#6898#0" expanded="true" />
             <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
@@ -1966,7 +1999,18 @@
             <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#25245#25246#0" expanded="true" />
+            <element signature="e#25294#25295#0" expanded="true" />
+            <element signature="e#25349#25350#0" expanded="true" />
+            <element signature="e#25394#25395#0" expanded="true" />
+            <element signature="e#25449#25450#0" expanded="true" />
+            <element signature="e#25494#25495#0" expanded="true" />
             <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getStuffFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#FillArrayListWithDataFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#30752#30767#0" expanded="true" />
+            <element signature="e#32288#32303#0" expanded="true" />
+            <element signature="e#34665#34681#0" expanded="true" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
@@ -1980,24 +2024,36 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.605263">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/csci342/justin/csci342_assignment2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="698" column="38" selection-start-line="698" selection-start-column="38" selection-end-line="698" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.45929018">
+          <caret line="290" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="992" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1607#1631#0" expanded="true" />
+            <element signature="e#1926#1950#0" expanded="true" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#wipeDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initialiseDatabase#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesSubjectExistLocally#0;class#MainActivity#0" expanded="false" />
             <element signature="method#createLocalSubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#doesTableExist#0;class#MainActivity#0" expanded="false" />
             <element signature="method#appendLocalDatabaseToArrayList#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6883#6898#0" expanded="true" />
             <element signature="method#setButtonPressed#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setURLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#querySubject#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayHTML#0;class#MainActivity#0" expanded="false" />
             <element signature="method#searchAndDisplayXML#0;class#MainActivity#0" expanded="false" />
@@ -2007,21 +2063,21 @@
             <element signature="method#HTMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#XMLButtonPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#JSONButtonPressed#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#25245#25246#0" expanded="true" />
+            <element signature="e#25294#25295#0" expanded="true" />
+            <element signature="e#25349#25350#0" expanded="true" />
+            <element signature="e#25394#25395#0" expanded="true" />
+            <element signature="e#25449#25450#0" expanded="true" />
+            <element signature="e#25494#25495#0" expanded="true" />
             <element signature="class#SubjectListAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getStuffFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#FillArrayListWithDataFromWebService#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#30752#30767#0" expanded="true" />
+            <element signature="e#32288#32303#0" expanded="true" />
+            <element signature="e#34665#34681#0" expanded="true" />
             <element signature="method#trustManagerThingy#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
   </component>

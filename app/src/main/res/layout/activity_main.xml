@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.csci342.justin.csci342_assignment2.MainActivity"
-    android:background="#a1ff73">
+    android:background="#a1ff73"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -23,9 +25,8 @@
             android:layout_marginLeft="5dp"
             android:maxLength="8"
             android:layout_weight="2"
-            android:hint="CSCI336"
-            android:layout_marginTop="2dp"
-            android:text="CSCI336" />
+            android:hint="TYPE SEARCH HERE"
+            android:layout_marginTop="2dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -71,16 +72,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:onClick="URL_AssignmentButtonPressed" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="PRESET URL"
-            android:id="@+id/MA_URLType_Preset_button"
-            android:layout_weight="1"
-            android:layout_marginRight="5dp"
-            android:nestedScrollingEnabled="false"
-            android:onClick="URL_PresetButtonPressed" />
 
         <Button
             android:layout_width="wrap_content"
